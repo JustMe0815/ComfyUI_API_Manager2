@@ -26,7 +26,7 @@ class PostImageToAPI:
 
     def post_images(self, images, api_url, api_object_id, api_key=""):
         api_url = api_url.replace("$id", api_object_id)
-        headers = {'Authorization': api_key} if api_key else {}
+        headers = {'X-API-Key': api_key} if api_key else {}
         results = []
 
         for (batch_number, image_tensor) in enumerate(images):
